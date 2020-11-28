@@ -3,6 +3,6 @@
 """
 
 
-def hello() -> None:
+def start() -> None:
     """{{cookiecutter.repo_name}}"""
     pass

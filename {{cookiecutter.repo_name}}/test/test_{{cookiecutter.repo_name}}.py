@@ -2,9 +2,10 @@
 {{cookiecutter.repo_name}}
 """
 
-from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import hello
+from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import start
 
 
-def test_hello() -> None:
-    """hello test"""
-    assert 1 + 1 = 3
+def test_start() -> None:
+    """start test"""
+    start()
+    assert True
