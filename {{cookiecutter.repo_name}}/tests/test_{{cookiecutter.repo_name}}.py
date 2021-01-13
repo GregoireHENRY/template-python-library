@@ -10,9 +10,11 @@ def test_start() -> None:
     start()
     assert True
 
+
 def test_demo() -> None:
     """Test demo"""
     assert demo("name", "demo") == "name: demo"
+
 
 def test_power() -> None:
     """Test power"""

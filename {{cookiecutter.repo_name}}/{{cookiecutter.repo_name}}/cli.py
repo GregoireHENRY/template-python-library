@@ -50,6 +50,7 @@ def demo(name: str, demo: str) -> None:
     """Command description"""
     core.demo(name, demo)
 
+
 @cli.command()
 @click.argument("value", required=True, type=float)
 def power(value: float) -> None:
