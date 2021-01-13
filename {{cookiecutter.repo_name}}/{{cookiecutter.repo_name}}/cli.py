@@ -6,6 +6,7 @@ from typing import Any
 
 import click
 from pudb import set_trace as bp  # pylint: disable=unused-import
+
 from {{cookiecutter.repo_name}} import NAME, __version__, core
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])

@@ -43,20 +43,19 @@ echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # Add pre-commit tool
 echo -n "Add the pre-commit tool.."
-poetry run pre-commit install -t pre-commit 2>/dev/null
-poetry run pre-commit install -t pre-push 2>/dev/null
+poetry run pre-commit install -t pre-commit > /dev/null 2>&1
+poetry run pre-commit install -t pre-push > /dev/null 2>&1
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # First commit
-echo -n "First commit.."
-git add .
+echo -n "Write the first commit.."
 git add .
 git commit -m "🎉 {{cookiecutter.project_name}} start"
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # Create main branch
-echo -n "First commit.."
-# git branch -M main
+echo -n "Create the main branch.."
+git branch -M main
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 echo ""
@@ -71,3 +70,5 @@ Then you can use:
 $ git push -u origin main
 Do not forget to work on a development branch:
 $ git checkout -b dev"
+
+cd {{cookiecutter.repo_name}}
