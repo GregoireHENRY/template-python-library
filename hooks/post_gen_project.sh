@@ -16,7 +16,7 @@ $(tput smul)Notes$(tput rmul)
 This script must exit successfully or the project generation will be aborted.
 Test on: Linux (Ubuntu 20).
 
-$(tput smul)Prerequesites$(tput rmul)
+$(tput smul)Prerequisites$(tput rmul)
 You must have installed these tools:
   - python3
   - pip
