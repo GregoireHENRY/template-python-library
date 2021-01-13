@@ -5,11 +5,10 @@
 
 def start() -> None:
     """{{cookiecutter.project_name}}"""
-    pass
 
 def demo(name: str, demo: str) -> str:
     """Description."""
-    return f"{}: {}", name, demo)
+    return f"{name}: {demo}"
 
 def power(value: float) -> float:
     """Compute power."""

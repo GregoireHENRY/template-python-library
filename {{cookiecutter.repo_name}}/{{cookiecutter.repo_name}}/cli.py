@@ -2,6 +2,8 @@
 {{cookiecutter.project_name}}
 """
 
+from typing import Any
+
 import click
 from pudb import set_trace as bp  # pylint: disable=unused-import
 from {{cookiecutter.repo_name}} import NAME, __version__, core
@@ -49,7 +51,7 @@ def demo(name: str, demo: str) -> None:
     core.demo(name, demo)
 
 @cli.command()
-@click.argument("value", required=True)
+@click.argument("value", required=True, type=float)
 def power(value: float) -> None:
     """Compute power"""
     core.power(value)

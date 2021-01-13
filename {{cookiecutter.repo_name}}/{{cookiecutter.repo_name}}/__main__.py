@@ -2,6 +2,6 @@
 {{cookiecutter.project_name}}
 """
 
-from {{cookiecutter.repo_name}}.cli
+from {{cookiecutter.repo_name}} import cli
 
 cli.main()
