@@ -6,27 +6,23 @@ CHECK_MARK="\e[32m✔\e[0m"
 
 # Pre-run message
 echo "
-🚧 Cookiecutter's post-generation hook script.
+🚧  $(tput bold)Cookiecutter$(tput sgr0)'s post-generation hook script.
 
-Description
------------
+$(tput smul)Description$(tput rmul)
 This script is a hook script executed after the project generation by
 cookiecutter.
 
-Notes
------
+$(tput smul)Notes$(tput rmul)
 This script must exit successfully or the project generation will be aborted.
 Test on: Linux (Ubuntu 20).
 
-Prerequesites
--------------
+$(tput smul)Prerequesites$(tput rmul)
 You must have installed these tools:
   - python3
   - pip
   - git
 
-Execution
----------"
+$(tput smul)Execution$(tput rmul)"
 
 # Install poetry
 echo -n "Check if poetry is installed.."
@@ -63,10 +59,12 @@ echo "🌟✨ It's done! $TOTAL_CHECKS"
 echo ""
 
 # Final setup (to do with your bare hands)
-echo "Now, create an online repo named {{cookiecutter.project_name}} and set the SSH
-remote url. It should look like:
-$ git remote add origin git@github.com:USERNAME/{{cookiecutter.project_name}}
+echo "Now, create an online repo named $(tput setaf 6){{cookiecutter.project_name}}$(tput sgr0) and set the SSH remote url.
+But first, move to your repo:
+$(tput setaf 3)$ $(tput setaf 2)cd $(tput setaf 6){{cookiecutter.repo_name}}$(tput sgr0)
+The command to add the your url, after having created the repo online, is:
+$(tput setaf 3)$ $(tput setaf 2)git remote add origin git@github.com:$(tput setaf 1)USERNAME$(tput setaf 2)/$(tput setaf 6){{cookiecutter.project_name}}$(tput setaf 2).git$(tput sgr0)
 Then you can use:
-$ git push -u origin main
+$(tput setaf 3)$ $(tput setaf 2)git push -u origin main$(tput sgr0)
 Do not forget to work on a development branch:
-$ git checkout -b dev"
+$(tput setaf 3)$ $(tput setaf 2)git checkout -b dev$(tput sgr0)$(tput bel)"
