@@ -72,3 +72,4 @@ Do not forget to work on a development branch:
 $ git checkout -b dev"
 
 cd {{cookiecutter.repo_name}}
+exec bash
