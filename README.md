@@ -20,6 +20,9 @@ pip install --user cookiecutter
 # Create your project from a template 
 cookiecutter gh:GregoireHENRY/python-starter-template
 
+# or from local template
+cookiecutter python-starter-template/
+
 # Install poetry
 pip install --user poetry
 
