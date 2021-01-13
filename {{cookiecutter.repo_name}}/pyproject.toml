@@ -3,9 +3,8 @@ name = "{{cookiecutter.project_name}}"
 version = "0.1"
 description = ""
 authors = ["Greg Henry <mail.greg.henry@gmail.com>"]
-maintainers = ["Greg Henry <mail.greg.henry@gmail.com>"]
 readme = "README.md"
-repository = ""
+homepage = ""
 
 [tool.poetry.dependencies]
 python ="^3.6"
