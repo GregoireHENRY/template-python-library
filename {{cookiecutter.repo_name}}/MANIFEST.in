@@ -1,0 +1,1 @@
+recursive-include {{cookiecutter.repo_name}}/rsc/to-be-included *

@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name}}"
+version = "0.1"
+description = ""
+authors = ["Greg Henry <mail.greg.henry@gmail.com>"]
+maintainers = ["Greg Henry <mail.greg.henry@gmail.com>"]
+readme = "README.md"
+repository = ""
+
+[tool.poetry.dependencies]
+python ="*"
+pudb = "*"
+pytest = "*"
+click = "*"
+
+[tool.poetry.dev-dependencies]
+black = "."
+pylint = "."
+isort = "."
+mypy = "."
+pre-commit = "."
+pytest-cov = "."
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+{{cookiecutter.project_name}} = "{{cookiecutter.repo_name}}.cli:main"

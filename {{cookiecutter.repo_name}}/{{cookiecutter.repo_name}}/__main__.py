@@ -1,7 +1,7 @@
 """
-{{cookiecutter.repo_name}}
+{{cookiecutter.project_name}}
 """
 
-from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import start
+from {{cookiecutter.repo_name}}.cli
 
-start()
+cli.main()

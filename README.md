@@ -14,15 +14,20 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 ## Quickstart
 
 ```sh
+# Install `pipx`
 python3 -m pip install pipx
 python3 -m pipx ensurepath
-pipx install pipenv
 
+# Create your project from a template 
 pipx run cookiecutter gh:GregoireHENRY/python-starter-template
 
+# Install poetry
+pip install --user poetry
+
+# Initialize your repo
 cd <repo_name>
 git init
-pipenv install --dev
-pipenv run pre-commit install -t pre-commit
-pipenv run pre-commit install -t pre-push
+
+# pipenv run pre-commit install -t pre-commit
+# pipenv run pre-commit install -t pre-push
 ```

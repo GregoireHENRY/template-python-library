@@ -1,11 +1,11 @@
 # {{cookiecutter.project_name}}
 
+> A cool project
 
-## Setup
+**v0.1**
 
-```sh
-git init
-pipenv install --dev
-pipenv run pre-commit install -t pre-commit
-pipenv run pre-commit install -t pre-push
-```
+-----
+
+## In action
+
+Text
