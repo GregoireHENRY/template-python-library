@@ -10,16 +10,17 @@ repository = ""
 [tool.poetry.dependencies]
 python ="^3.6"
 pudb = "*"
-pytest = "*"
 click = "*"
+pytest = "*"
+pytest-sugar = "*"
 
 [tool.poetry.dev-dependencies]
-black = "."
-pylint = "."
-isort = "."
-mypy = "."
-pre-commit = "."
-pytest-cov = "."
+black = "*"
+pylint = "*"
+isort = "*"
+mypy = "*"
+pre-commit = "*"
+pytest-cov = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

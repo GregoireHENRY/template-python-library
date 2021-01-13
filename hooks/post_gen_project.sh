@@ -48,7 +48,7 @@ poetry run pre-commit install -t pre-push > /dev/null 2>&1
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # First commit
-echo -n "Write the first commit.."
+echo "Write the first commit.."
 git add .
 git commit -m "🎉 {{cookiecutter.project_name}} start"
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
