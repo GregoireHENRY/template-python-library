@@ -37,6 +37,11 @@ echo -n "Initialize the git repo.."
 git init . -q
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
+# Install poetry dependencies
+echo "Install poetry dependencies.."
+poetry install
+echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
+
 # Add pre-commit tool
 echo -n "Add the pre-commit tool.."
 poetry run pre-commit install -t pre-commit > /dev/null 2>&1
