@@ -14,12 +14,11 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 ## Quickstart
 
 ```sh
-# Install `pipx`
-python3 -m pip install pipx
-python3 -m pipx ensurepath
+# Install cookiecutter
+pip install --user cookiecutter
 
 # Create your project from a template 
-pipx run cookiecutter gh:GregoireHENRY/python-starter-template
+cookiecutter gh:GregoireHENRY/python-starter-template
 
 # Install poetry
 pip install --user poetry
