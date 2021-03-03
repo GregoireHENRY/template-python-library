@@ -20,7 +20,7 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 - Static typing with [mypy](http://mypy-lang.org)
 - Linting with [flake8](https://flake8.pycqa.org/en/latest)
 - Git hooks that run all the above before committing with [pre-commit](https://pre-commit.com/)
-- Virtual environment dependencies & PyPI publish [poetry](https://python-poetry.org/)
+- Virtual environment dependencies & PyPI publish with [poetry](https://python-poetry.org/)
 
 ## Quickstart
 
