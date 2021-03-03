@@ -8,7 +8,7 @@ from typing import Any
 
 import click
 from pudb import set_trace as bp  # noqa: F401
-from {{cookiecutter.repo_name}} import NAME, __version__, core
+from {{cookiecutter.repo_name}} import __name__, __version__, core
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -61,7 +61,7 @@ def power(value: float) -> None:
 
 
 def main() -> None:
-    cli(prog_name=NAME)  # pylint: disable=no-value-for-parameter,unexpected-keyword-arg
+    cli(prog_name=__name__)  # pylint: disable=no-value-for-parameter,unexpected-keyword-arg
 
 
 if __name__ == "__main__":
