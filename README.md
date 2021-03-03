@@ -6,7 +6,7 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 
 <p align="center">
     <img src="https://docs.pytest.org/en/latest/_static/pytest_logo_curves.svg" height="50px" padding="0px">
-    <img src="https://black.readthedocs.io/en/stable/_static/logo2.png" height="50px" padding="4px 20px 6px">
+    <img src="https://raw.githubusercontent.com/psf/black/master/docs/_static/logo2-readme.png" height="50px" padding="4px 20px 6px">
     <img src="https://pycqa.github.io/isort/art/logo.png" height="50px" padding="4px 10px 14px">
     <img src="https://camo.githubusercontent.com/20e0f72b4f84dc5b42aceb95eb8eaa6c574746c0057e9e2525dd6cb4797d565f/687474703a2f2f6d7970792d6c616e672e6f72672f7374617469632f6d7970795f6c696768742e737667" height="50px" padding="6px 30px 12px">
     <img src="rsc/img/flake8.png" height="50px" padding="8px 0px 16px">
