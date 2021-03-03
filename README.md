@@ -25,3 +25,4 @@ cookiecutter python-starter-template/
 ```
 
 Voilà! ✨
+You can see an example [here](https://github.com/GregoireHENRY/test-python-starter).
