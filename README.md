@@ -4,11 +4,11 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 
 ## Features
 
-- Testing with [pytest](https://docs.pytest.org/en/latest/)
+- Testing with [pytest](https://docs.pytest.org/en/latest)
 - Formatting with [black](https://github.com/psf/black)
 - Import sorting with [isort](https://github.com/timothycrosley/isort)
-- Static typing with [mypy](http://mypy-lang.org/)
-- Linting with [flake8](https://flake8.pycqa.org/en/latest/)
+- Static typing with [mypy](http://mypy-lang.org)
+- Linting with [flake8](https://flake8.pycqa.org/en/latest)
 - Git hooks that run all the above before committing with [pre-commit](https://pre-commit.com/)
 
 ## Quickstart

@@ -65,9 +65,9 @@ echo ""
 echo "Move into your project:
 $(tput setaf 3)$ $(tput setaf 2)cd $(tput setaf 6){{cookiecutter.repo_name}}$(tput sgr0)
 
-If you want your repo to be hosted online on your GitHub account, create an online repo named
+If you want your repo to be hosted online on your GitHub account, create an online repo named\
  $(tput setaf 6){{cookiecutter.project_name}}$(tput sgr0) and after that set the SSH remote url:
-$(tput setaf 3)$ $(tput setaf 2)git remote add origin git@github.com:$(tput setaf 1)USERNAME
+$(tput setaf 3)$ $(tput setaf 2)git remote add origin git@github.com:$(tput setaf 1)USERNAME\
 $(tput setaf 2)/$(tput setaf 6){{cookiecutter.project_name}}$(tput setaf 2).git$(tput sgr0)
 Then publish your commits:
 $(tput setaf 3)$ $(tput setaf 2)git push -u origin main$(tput sgr0)
