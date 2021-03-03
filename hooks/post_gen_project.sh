@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 CHECK_MARK="$(tput setaf 2)✔$(tput sgr0)"
 
 # Pre-run message
