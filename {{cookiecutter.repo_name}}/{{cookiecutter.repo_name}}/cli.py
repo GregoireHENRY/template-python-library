@@ -8,6 +8,7 @@ from typing import Any
 
 import click
 from pudb import set_trace as bp  # noqa: F401
+
 from {{cookiecutter.repo_name}} import __name__, __version__, core
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
