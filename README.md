@@ -4,6 +4,8 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 
 ## Features
 
+![pytest logo]{height=10px}
+
 - Testing with [pytest](https://docs.pytest.org/en/latest)
 - Formatting with [black](https://github.com/psf/black)
 - Import sorting with [isort](https://github.com/timothycrosley/isort)
@@ -26,3 +28,5 @@ cookiecutter python-starter-template/
 
 Voilà! ✨
 You can see an example [here](https://github.com/GregoireHENRY/test-python-starter).
+
+[pytest logo]: https://docs.pytest.org/en/latest/_static/pytest_logo_curves.svg

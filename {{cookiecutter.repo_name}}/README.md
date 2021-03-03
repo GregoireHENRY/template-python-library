@@ -34,7 +34,19 @@ In action demo.
 #### License
 
 <sub>
-Licensed under the <a href="LICENSE">MIT License</a>.
+    Licensed under the <a href="LICENSE">MIT License</a>.
+</sub>
+
+<br>
+
+<sub>
+    <p align="right">
+        Created from the template 
+        <a href="https://github.com/GregoireHENRY/python-starter-template">
+            GregoireHENRY/python-starter-template
+        </a>
+        .
+    </p>
 </sub>
 
 [logo image]: rsc/img/logo.jpg
@@ -58,3 +70,4 @@ Licensed under the <a href="LICENSE">MIT License</a>.
 [pytest badge]: https://img.shields.io/badge/pytest-enabled-brightgreen.svg
 [pre-commit link]: https://pre-commit.com
 [pre-commit badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen.svg
+[template link]: https://github.com/GregoireHENRY/python-starter-template
