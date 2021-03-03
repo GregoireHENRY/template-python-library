@@ -15,11 +15,11 @@ repos:
     entry: poetry run black --line-length=100
     types: [python]
 
-  - id: pylint
-    name: pylint
+  - id: flake8
+    name: flake8
     stages: [commit]
     language: system
-    entry: poetry run pylint
+    entry: poetry run flake8
     types: [python]
 
   - id: mypy
