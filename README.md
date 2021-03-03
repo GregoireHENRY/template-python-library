@@ -4,7 +4,7 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 
 ## Features
 
-![pytest logo]{height=10px}
+![pytest logo]
 
 - Testing with [pytest](https://docs.pytest.org/en/latest)
 - Formatting with [black](https://github.com/psf/black)
@@ -30,3 +30,4 @@ Voilà! ✨
 You can see an example [here](https://github.com/GregoireHENRY/test-python-starter).
 
 [pytest logo]: https://docs.pytest.org/en/latest/_static/pytest_logo_curves.svg
+{: height="36px"}
