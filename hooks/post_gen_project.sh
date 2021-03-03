@@ -61,13 +61,15 @@ echo ""
 echo "🌟✨ It's done! $TOTAL_CHECKS"
 echo ""
 
-# Final setup (to do with your bare hands)
-echo "Now, create an online repo named $(tput setaf 6){{cookiecutter.project_name}}$(tput sgr0) and set the SSH remote url.
-But first, move to your repo:
+# Final setup (to do "a la mano")
+echo "Move into your project:
 $(tput setaf 3)$ $(tput setaf 2)cd $(tput setaf 6){{cookiecutter.repo_name}}$(tput sgr0)
-The command to add the your url, after having created the repo online, is:
-$(tput setaf 3)$ $(tput setaf 2)git remote add origin git@github.com:$(tput setaf 1)USERNAME$(tput setaf 2)/$(tput setaf 6){{cookiecutter.project_name}}$(tput setaf 2).git$(tput sgr0)
-Then you can use:
+
+If you want your repo to be hosted online on your GitHub account, create an online repo named
+ $(tput setaf 6){{cookiecutter.project_name}}$(tput sgr0) and after that set the SSH remote url:
+$(tput setaf 3)$ $(tput setaf 2)git remote add origin git@github.com:$(tput setaf 1)USERNAME
+$(tput setaf 2)/$(tput setaf 6){{cookiecutter.project_name}}$(tput setaf 2).git$(tput sgr0)
+Then publish your commits:
 $(tput setaf 3)$ $(tput setaf 2)git push -u origin main$(tput sgr0)
 Do not forget to work on a development branch:
 $(tput setaf 3)$ $(tput setaf 2)git checkout -b dev$(tput sgr0)$(tput bel)"
