@@ -36,25 +36,21 @@ git init . -q
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # Install poetry dependencies
-echo "Install poetry dependencies.."
+echo "Install poetry dependencies in a virtual environments.."
 poetry install
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # Add pre-commit tool
-echo -n "Add the pre-commit tool.."
-poetry run pre-commit install -t pre-commit > /dev/null 2>&1
-poetry run pre-commit install -t pre-push > /dev/null 2>&1
+echo -n "Install pre-commit hooks.."
+poetry run pre-commit install
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 # First commit
-echo "Write the first commit.."
+echo "Write the first commit on a development branch.."
 git add .
-git commit -m "🎉 {{cookiecutter.project_name}} start"
-echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
-
-# Create main branch
-echo -n "Create the main branch.."
 git branch -M main
+git checkout -b dev
+git commit -m "🎉 {{cookiecutter.project_name}} first commit"
 echo " $CHECK_MARK" && TOTAL_CHECKS=$TOTAL_CHECKS$CHECK_MARK
 
 echo ""
@@ -62,14 +58,18 @@ echo "🌟✨ It's done! $TOTAL_CHECKS"
 echo ""
 
 # Final setup (to do "a la mano")
-echo "Move into your project:
+echo "Now you can move into your project:
 $(tput setaf 3)$ $(tput setaf 2)cd $(tput setaf 6){{cookiecutter.repo_name}}$(tput sgr0)
 
 If you want your repo to be hosted online on your GitHub account, create an online repo named\
  $(tput setaf 6){{cookiecutter.project_name}}$(tput sgr0) and after that set the SSH remote url:
 $(tput setaf 3)$ $(tput setaf 2)git remote add origin git@github.com:$(tput setaf 1)USERNAME\
 $(tput setaf 2)/$(tput setaf 6){{cookiecutter.project_name}}$(tput setaf 2).git$(tput sgr0)
-Then publish your commits:
-$(tput setaf 3)$ $(tput setaf 2)git push -u origin main$(tput sgr0)
-Do not forget to work on a development branch:
-$(tput setaf 3)$ $(tput setaf 2)git checkout -b dev$(tput sgr0)$(tput bel)"
+Then publish your commits on the development branch:
+$(tput setaf 3)$ $(tput setaf 2)git push origin dev$(tput sgr0)
+You can merge and publish your updates to the main branch when you are ready:
+$(tput setaf 3)$ $(tput setaf 2)git checkout main$(tput sgr0)
+$(tput setaf 3)$ $(tput setaf 2)git merge dev$(tput sgr0)
+$(tput setaf 3)$ $(tput setaf 2)git push origin main$(tput sgr0)
+Do not forget to go back to the development branch immediately afterwards:
+$(tput setaf 3)$ $(tput setaf 2)git checkout dev$(tput sgr0)

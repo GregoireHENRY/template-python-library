@@ -2,7 +2,7 @@
 fail_fast: true
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: master
+      rev: v3.4.0
       hooks:
           - id: check-added-large-files
             args: [--maxkb=500]
@@ -15,32 +15,32 @@ repos:
           - id: no-commit-to-branch
             stages: [commit]
     - repo: https://github.com/jumanjihouse/pre-commit-hooks
-      rev: master
+      rev: 2.1.5
       hooks:
           - id: forbid-binary
             exclude: |
                 (?x)^(
-                    rsc/.*\.(png|gif)
+                    rsc/.*\.(png|jpg|gif)
                 )$
           - id: markdownlint
     - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: master
+      rev: v0.1.0
       hooks:
           - id: yamlfmt
     - repo: https://gitlab.com/PyCQA/flake8
-      rev: master
+      rev: 3.9.0
       hooks:
           - id: flake8
     - repo: https://github.com/PyCQA/isort
-      rev: master
+      rev: 5.7.0
       hooks:
           - id: isort
     - repo: https://github.com/pre-commit/mirrors-mypy
-      rev: master
+      rev: v0.812
       hooks:
           - id: mypy
     - repo: https://github.com/psf/black
-      rev: master
+      rev: 20.8b1
       hooks:
           - id: black
     - repo: local
