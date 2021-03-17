@@ -2,7 +2,7 @@
 name = "{{cookiecutter.project_name}}"
 version = "0.1"
 description = ""
-authors = ["Greg Henry <greg.henry@mail.com>"]
+authors = ["Greg Henry <contact@greghenry.xyz>"]
 readme = "README.md"
 homepage = ""
 

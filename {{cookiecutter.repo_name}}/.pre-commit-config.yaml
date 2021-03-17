@@ -1,47 +1,54 @@
+---
+fail_fast: true
 repos:
-- repo: local
-  hooks:
-  - id: isort
-    name: isort
-    stages: [commit]
-    language: system
-    entry: poetry run isort
-    types: [python]
-
-  - id: black
-    name: black
-    stages: [commit]
-    language: system
-    entry: poetry run black --line-length=100
-    types: [python]
-
-  - id: flake8
-    name: flake8
-    stages: [commit]
-    language: system
-    entry: poetry run flake8
-    types: [python]
-
-  - id: mypy
-    name: mypy
-    stages: [commit]
-    language: system
-    entry: poetry run mypy
-    types: [python]
-    require_serial: true
-
-  - id: pytest
-    name: pytest
-    stages: [commit]
-    language: system
-    entry: poetry run pytest
-    types: [python]
-    pass_filenames: false
-
-  - id: pytest-cov
-    name: pytest
-    stages: [commit]
-    language: system
-    entry: poetry run pytest --cov --cov-fail-under=100 --cov-report term-missing
-    types: [python]
-    pass_filenames: false
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: master
+      hooks:
+          - id: check-added-large-files
+            args: [--maxkb=500]
+          - id: check-executables-have-shebangs
+          - id: check-merge-conflict
+          - id: check-toml
+          - id: check-yaml
+          - id: end-of-file-fixer
+          - id: trailing-whitespace
+          - id: no-commit-to-branch
+            stages: [commit]
+    - repo: https://github.com/jumanjihouse/pre-commit-hooks
+      rev: master
+      hooks:
+          - id: forbid-binary
+            exclude: |
+                (?x)^(
+                    rsc/.*\.(png|gif)
+                )$
+          - id: markdownlint
+    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+      rev: master
+      hooks:
+          - id: yamlfmt
+    - repo: https://gitlab.com/PyCQA/flake8
+      rev: master
+      hooks:
+          - id: flake8
+    - repo: https://github.com/PyCQA/isort
+      rev: master
+      hooks:
+          - id: isort
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: master
+      hooks:
+          - id: mypy
+    - repo: https://github.com/psf/black
+      rev: master
+      hooks:
+          - id: black
+    - repo: local
+      hooks:
+          - id: pytest-cov
+            name: Launch tests with Pytest
+            stages: [commit]
+            language: system
+            entry: poetry run pytest --cov --cov-fail-under=100 --cov-report term-missing
+            types: [python]
+            pass_filenames: false
