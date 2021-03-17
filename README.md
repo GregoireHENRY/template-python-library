@@ -28,7 +28,7 @@ This repo is a project template, improved from this [blogpost](https://sourcery.
 # Get yourself cookiecutter
 pip install --user cookiecutter
 
-# Create your project from a template 
+# Create your project from a template
 cookiecutter gh:GregoireHENRY/python-starter-template
 
 # Or from local template
@@ -36,4 +36,3 @@ cookiecutter python-starter-template/
 ```
 
 Voilà! ✨
-You can see an example [here](https://github.com/GregoireHENRY/test-python-starter).
