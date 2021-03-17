@@ -24,7 +24,7 @@ repos:
                 )$
           - id: markdownlint
     - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: v0.1.0
+      rev: 0.1.0
       hooks:
           - id: yamlfmt
     - repo: https://gitlab.com/PyCQA/flake8
