@@ -72,4 +72,4 @@ $(tput setaf 3)$ $(tput setaf 2)git checkout main$(tput sgr0)
 $(tput setaf 3)$ $(tput setaf 2)git merge dev$(tput sgr0)
 $(tput setaf 3)$ $(tput setaf 2)git push origin main$(tput sgr0)
 Do not forget to go back to the development branch immediately afterwards:
-$(tput setaf 3)$ $(tput setaf 2)git checkout dev$(tput sgr0)
+$(tput setaf 3)$ $(tput setaf 2)git checkout dev$(tput sgr0)"
