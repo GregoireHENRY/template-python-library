@@ -62,7 +62,9 @@ def power(value: float) -> None:
 
 
 def main() -> None:
-    cli(prog_name=__name__)  # pylint: disable=no-value-for-parameter,unexpected-keyword-arg
+    cli(
+        prog_name=__name__
+    )  # pylint: disable=no-value-for-parameter,unexpected-keyword-arg
 
 
 if __name__ == "__main__":
