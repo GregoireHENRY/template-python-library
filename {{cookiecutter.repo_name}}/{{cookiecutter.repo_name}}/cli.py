@@ -17,8 +17,8 @@ from {{cookiecutter.repo_name}} import core
 
 MANIFEST_FILE = Path("pyproject.toml")
 MANIFEST = DotMap(envtoml.load(MANIFEST_FILE.open()))
-NAME = MANIFEST.package.name
-VERSION = MANIFEST.package.version
+NAME = MANIFEST.tool.poetry.name
+VERSION = MANIFEST.tool.poetry.version
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
 
