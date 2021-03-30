@@ -4,24 +4,29 @@
 {{cookiecutter.project_name}}
 """
 
+
+from pathlib import Path
 from typing import Any
 
 import click
+import envtoml
+from dotmap import DotMap
 from pudb import set_trace as bp  # noqa: F401
 
-from {{cookiecutter.repo_name}} import __name__, __version__, core
+from {{cookiecutter.repo_name}} import core
 
+MANIFEST_FILE = Path("pyproject.toml")
+MANIFEST = DotMap(envtoml.load(MANIFEST_FILE.open()))
+NAME = MANIFEST.package.name
+VERSION = MANIFEST.package.version
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
 
 def print_version(ctx: Any, param: Any, value: Any) -> None:
     """Show version."""
-
-    # pylint: disable=unused-argument
-
     if not value or ctx.resilient_parsing:
         return
-    click.echo(__version__)
+    click.echo(VERSION)
     ctx.exit()
 
 
@@ -62,9 +67,7 @@ def power(value: float) -> None:
 
 
 def main() -> None:
-    cli(
-        prog_name=__name__
-    )  # pylint: disable=no-value-for-parameter,unexpected-keyword-arg
+    cli(prog_name=NAME)
 
 
 if __name__ == "__main__":
