@@ -28,10 +28,10 @@ Licensed under the [MIT license][license link].
 [logo image]: ./rsc/img/logo.jpg
 [doc link]: .
 [license link]: ./LICENSE
-[license badge]: https://img.shields.io/badge/License-MIT-blue.svg
+[license badge]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
 [coverage badge]: https://img.shields.io/badge/coverage-100%25-brightgreen
 [coverage link]: https://github.com/pytest-dev/pytest-cov
-[version badge]: https://img.shields.io/badge/version-0.1-blue
+[version badge]: https://img.shields.io/badge/version-0.1.0-blue
 [python link]: https://www.python.org/
 [python badge]: https://img.shields.io/badge/python-3.8^-blue
 [pre-commit link]: https://pre-commit.com
