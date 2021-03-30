@@ -23,7 +23,7 @@ In action demo.
 
 ## License
 
-Licensed under the [MIT license][license link].
+Licensed under the [Apache 2.0 license][license link].
 
 [logo image]: ./rsc/img/logo.jpg
 [doc link]: .
