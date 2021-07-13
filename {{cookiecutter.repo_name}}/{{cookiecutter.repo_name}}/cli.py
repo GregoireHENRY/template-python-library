@@ -44,26 +44,7 @@ def cli() -> None:
     """
     {{cookiecutter.project_name}} description.
     """
-
-
-@cli.command()
-@click.argument("name", required=True)
-@click.option(
-    "-d",
-    "--demo",
-    default="default",
-    help="Print argument.",
-)
-def demo(name: str, demo: str) -> None:
-    """Command description"""
-    core.demo(name, demo)
-
-
-@cli.command()
-@click.argument("value", required=True, type=float)
-def power(value: float) -> None:
-    """Compute power"""
-    core.power(value)
+    core.start()
 
 
 def main() -> None:

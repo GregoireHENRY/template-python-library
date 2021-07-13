@@ -2,12 +2,12 @@
 name = "{{cookiecutter.project_name}}"
 version = "0.1.0"
 description = "This is my cool project description."
-authors = ["Greg Henry <contact@greghenry.xyz>"]
+authors = ["Greg Henry <greg.henry@mail.com>"]
 readme = "README.md"
 homepage = ""
 
 [tool.poetry.dependencies]
-python ="^3.8"
+python ="^3.9"
 pudb = "*"
 click = "*"
 pytest = "*"

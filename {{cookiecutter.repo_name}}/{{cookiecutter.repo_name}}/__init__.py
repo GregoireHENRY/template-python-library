@@ -4,6 +4,6 @@
 {{cookiecutter.project_name}}
 """
 
-from .core import demo, power, start
+from .core import start
 
-__all__ = ["demo", "power", "start"]
+__all__ = ["start"]
