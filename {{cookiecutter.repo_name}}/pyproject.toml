@@ -1,28 +1,32 @@
 [tool.poetry]
 name = "{{cookiecutter.project_name}}"
 version = "0.1.0"
-description = "This is my cool project description."
+description = "{{cookiecutter.description}}"
 authors = ["Greg Henry <greg.henry@mail.com>"]
 readme = "README.md"
-homepage = ""
+license = "Apache-2.0"
+repository = ""
+keywords = []
+classifiers = []
 
 [tool.poetry.dependencies]
 python ="^3.9"
-pudb = "*"
-click = "*"
-pytest = "*"
-pytest-sugar = "*"
-envtoml = "*"
-dotmap = "*"
+pudb = "^2021.1"
+click = "^8.0.1"
+pytest = "^6.2.5"
+pytest-sugar = "^0.9.4"
+"ruamel.yaml" = "^0.17.16"
+dotmap = "^1.3.24"
 
 [tool.poetry.dev-dependencies]
-black = "*"
-flake8 = "*"
-flake8-bugbear = "*"
-isort = "*"
-mypy = "*"
-pre-commit = "*"
-pytest-cov = "*"
+black = "^21.9b0"
+isort = "^5.9.3"
+flake8 = "^3.9.2"
+flake8-bugbear = "^21.9.1"
+mypy = "^0.910"
+pre-commit = "^2.15.0"
+pytest-cov = "^2.12.1"
+twine = "^3.4.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

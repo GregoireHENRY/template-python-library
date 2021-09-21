@@ -1,38 +1,41 @@
-# Python Project Starter
+# Template for Python Libraries
 
-This repo is a project template, improved from this [blogpost](https://sourcery.ai/blog/python-best-practices/), using [cookiecutter](https://github.com/audreyr/cookiecutter).
+> Template using [`cookiecutter`][cookiecutter url] for Python libraries to be
+> upload on [pypi][pypi url].
 
 ## Features
 
-<p align="center">
-    <img src="https://docs.pytest.org/en/latest/_static/pytest_logo_curves.svg" height="50px" padding="0px">
-    <img src="https://raw.githubusercontent.com/psf/black/master/docs/_static/logo2-readme.png" height="50px" padding="4px 20px 6px">
-    <img src="https://pycqa.github.io/isort/art/logo.png" height="50px" padding="4px 10px 14px">
-    <img src="https://camo.githubusercontent.com/20e0f72b4f84dc5b42aceb95eb8eaa6c574746c0057e9e2525dd6cb4797d565f/687474703a2f2f6d7970792d6c616e672e6f72672f7374617469632f6d7970795f6c696768742e737667" height="50px" padding="6px 30px 12px">
-    <img src="rsc/img/flake8.png" height="50px" padding="8px 0px 16px">
-    <img src="https://pre-commit.com/logo.svg" height="50px" padding="4px 34px 10px">
-    <img src="https://python-poetry.org/images/logo-origami.svg" height="50px" padding="6px 16px 10px">
-</p>
-
-- Testing with [pytest](https://docs.pytest.org/en/latest)
-- Formatting with [black](https://github.com/psf/black)
-- Import sorting with [isort](https://github.com/timothycrosley/isort)
-- Static typing with [mypy](http://mypy-lang.org)
-- Linting with [flake8](https://flake8.pycqa.org/en/latest)
-- Git hooks that run all the above before committing with [pre-commit](https://pre-commit.com/)
-- Virtual environment dependencies & PyPI publish with [poetry](https://python-poetry.org/)
++ tests with [`pytest`][pytest url]
++ fixers for code with [`black`][black url] and imports with [`isort`][isort url]
++ linting with [`flake8`][flake8 url]
++ type checking with [`mypy`][mypy url]
++ git commit checking with [`pre-commit`][pre-commit url]
++ dependency management & packaging with [`poetry`][poetry url]
 
 ## Quickstart
 
-```bash
-# Get yourself cookiecutter
-pip install --user cookiecutter
-
-# Create your project from a template
-cookiecutter gh:GregoireHENRY/python-starter-template
-
-# Or from local template
-cookiecutter python-starter-template/
+```sh
+pipx install cookiecutter
 ```
 
-Voilà! ✨
+to install `cookiecutter` using [`pipx`][pipx url]. The template uses
+[Python3.9][python url], so check your `pipx` versions.
+
+```sh
+cookiecutter gh:GregoireHENRY/template-python-library
+```
+
+to create your project from this template.
+
+[python badge]: https://img.shields.io/badge/python-^3.9-blue
+[python url]: https://www.python.org/
+[pypi url]: https://pypi.org
+[pipx url]: https://github.com/pypa/pipx
+[cookiecutter url]: https://github.com/audreyr/cookiecutter
+[pre-commit url]: https://pre-commit.com
+[poetry url]: https://python-poetry.org/docs
+[flake8 url]: https://flake8.pycqa.org/en/latest
+[isort url]: https://github.com/timothycrosley/isort
+[mypy url]: http://mypy-lang.org
+[black url]: https://github.com/psf/black
+[pytest url]: https://docs.pytest.org/en/latest

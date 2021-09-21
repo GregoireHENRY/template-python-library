@@ -9,13 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-+ replaced local pre-commit hooks with repo
-+ added more git hooks
+## [0.2.0] - 2021-09-21
+
+### Added
+
++ template's contributing
++ license
 
 ### Changed
 
-+ README
-+ template README
++ template's local pre-commit hooks with repo
++ project url
++ readme
++ template's readme
 
 ## [0.1.1] - 2021-03-03
 
