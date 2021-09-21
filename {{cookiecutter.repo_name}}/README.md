@@ -20,13 +20,6 @@
 
 ## Installation
 
-```sh
-pipx install {{cookiecutter.project_name}}
-```
-
-installs **{{cookiecutter.project_name}}** via [`pipx`][pipx url] to benefit of
-an isolated environment.
-
 ## Usage
 
 ## Configuration
