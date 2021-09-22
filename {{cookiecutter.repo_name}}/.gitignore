@@ -8,7 +8,7 @@ dist/
 perso/
 
 # Project
-assets/img/*
-!assets/img/logo.png
+assets/images/*
+!assets/images/logo.png
 {{cookiecutter.project_name}}.log
 {{cookiecutter.project_name}}.yaml
