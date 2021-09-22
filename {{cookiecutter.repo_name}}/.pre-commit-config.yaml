@@ -61,5 +61,5 @@ repos:
             name: Update single sources of truth
             stages: [commit]
             language: system
-            entry: poetry run python single_sources.py
+            entry: poetry run python ssot.py
             pass_filenames: false
