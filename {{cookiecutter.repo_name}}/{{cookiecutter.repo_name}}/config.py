@@ -5,7 +5,7 @@ Configurate parameters.
 """
 
 from pathlib import Path
-from typing import Optional  # noqa: F401
+from typing import Any, Dict, Optional
 
 import yaml
 from dotmap import DotMap
@@ -30,7 +30,7 @@ class Cfg:
         """Load the config file."""
         PATH = {{cookiecutter.repo_name}}.CFG_PATH
         if PATH.is_file():
-            CFG_FILE = {{cookiecutter.repo_name}}.read_yaml(PATH)
+            CFG_FILE = {{cookiecutter.repo_name}}.utils.read_yaml(PATH)
             self.__parse_config_file(CFG_FILE)
 
     def __parse_config_file(self, CFG_FILE: DotMap) -> None:

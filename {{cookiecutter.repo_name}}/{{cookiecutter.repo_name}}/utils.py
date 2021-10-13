@@ -4,13 +4,13 @@
 Toolbox.
 """
 
-import itertools
 import enum
+import itertools
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union, Iterable, Iterator
+from typing import Any, Dict, Iterable, Iterator, List, Optional, Union
 
-import yaml
 import ruamel.yaml
+import yaml
 from dotmap import DotMap
 from pudb import set_trace as bp  # noqa
 
