@@ -4,11 +4,14 @@
 Toolbox.
 """
 
+import itertools
 import enum
 from pathlib import Path
-from typing import Any, Dict, Generator, List, Optional
+from typing import Any, Dict, List, Optional, Union, Iterable, Iterator
 
 import yaml
+import ruamel.yaml
+from dotmap import DotMap
 from pudb import set_trace as bp  # noqa
 
 
@@ -30,15 +33,34 @@ class GetAttributes:
 
 
 def directories(
-    PATH: Path, FILTER: Optional[str] = None
-) -> Generator[Path, None, None]:
+    PATH: Path,
+    INCLUDES: Optional[Union[str, List[str]]] = None,
+    EXCLUDES: Optional[Union[str, List[str]]] = None,
+) -> Iterator[Path]:
     """Iterate over the directories of a given path."""
-    if FILTER is None:
-        FILTER = "*"
-    return (P for P in PATH.glob(FILTER) if P.is_dir())
+    # Parse inputs.
+    if INCLUDES is None:
+        INCLUDES = [
+            "*",
+        ]
+    elif type(INCLUDES) is str:
+        INCLUDES = [
+            INCLUDES,
+        ]
+    if EXCLUDES is None:
+        EXCLUDES = []
+    elif type(EXCLUDES) is str:
+        EXCLUDES = [
+            EXCLUDES,
+        ]
+
+    # Filter directory.
+    FILTER_INCLUDING = itertools.chain.from_iterable(PATH.glob(F) for F in INCLUDES)
+    FILTER_EXCLUDING = itertools.chain.from_iterable(PATH.glob(F) for F in EXCLUDES)
+    return iter(set(FILTER_INCLUDING) - set(FILTER_EXCLUDING))
 
 
-def form_yes_or_no(question: str, default_no: bool = True) -> bool:
+def form_yes_or_no(QUESTION: str, DEFAULT_NO: bool = True) -> bool:
     """
     Single yes or no question without recursion.
 
@@ -47,15 +69,43 @@ def form_yes_or_no(question: str, default_no: bool = True) -> bool:
         @icamys commented on 29 Nov 2020 on Github,
         https://gist.github.com/garrettdreyfus/8153571
     """
-    choices = " [y/N]: " if default_no else " [Y/n]: "
-    default_answer = "n" if default_no else "y"
-    reply = str(input(question + choices)).lower().strip() or default_answer
-    if reply[:1] == "y":
+    CHOICES = " [y/N]: " if DEFAULT_NO else " [Y/n]: "
+    DEFAULT_ANSWER = "n" if DEFAULT_NO else "y"
+    REPLY = str(input(f"{QUESTION} {CHOICES}\n>> ")).lower().strip() or DEFAULT_ANSWER
+    print()
+    if REPLY[:1] == "y":
         return True
-    elif reply[:1] == "n":
+    elif REPLY[:1] == "n":
         return False
     else:
-        return not default_no
+        return not DEFAULT_NO
+
+
+def form_choice(QUESTION: str, CHOICES: Iterable[Any], DEFAULT: int = 0) -> int:
+    """Form to ask a choice"""
+    CHOICES_LIST = [f"+ {CHOICE} [{INDEX}]\n" for (INDEX, CHOICE) in enumerate(CHOICES)]
+    NUMBER_CHOICES = len(CHOICES_LIST)
+    FORMATTED_CHOICES = "".join(CHOICES_LIST)
+    FULL_QUESTION = (
+        f"{QUESTION} [0-{NUMBER_CHOICES - 1}] (default: {DEFAULT})\n"
+        f"{FORMATTED_CHOICES}>> "
+    )
+    CHOICE = int(input(FULL_QUESTION) or DEFAULT)
+    print()
+    return CHOICE
+
+
+def form_overwrite_file(
+    PATH: Path, QUESTION: Optional[str] = None, DEFAULT_NO: bool = True
+) -> bool:
+    """Yes/no form to ask whether file should be overwritten if already existing."""
+    if QUESTION is None:
+        QUESTION = "Overwrite {PATH}?"
+
+    save = True
+    if PATH.is_file():
+        save = form_yes_or_no(QUESTION, DEFAULT_NO=DEFAULT_NO)
+    return save
 
 
 def yaml_represent_none(self: Any, _: Any) -> Any:
@@ -64,3 +114,9 @@ def yaml_represent_none(self: Any, _: Any) -> Any:
 
 def yaml_add_representer_none() -> None:
     yaml.add_representer(type(None), yaml_represent_none)
+
+
+def read_yaml(PATH: Path) -> DotMap:
+    """Load the config file."""
+    CFGF_DICT, IND, BSI = ruamel.yaml.util.load_yaml_guess_indent(PATH.open())
+    return DotMap(CFGF_DICT)

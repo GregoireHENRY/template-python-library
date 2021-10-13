@@ -7,7 +7,6 @@ Configurate parameters.
 from pathlib import Path
 from typing import Optional  # noqa: F401
 
-import ruamel.yaml
 import yaml
 from dotmap import DotMap
 from pudb import set_trace as bp  # noqa: F401
@@ -29,8 +28,9 @@ class Cfg:
 
     def load_config_file(self) -> None:
         """Load the config file."""
-        if {{cookiecutter.repo_name}}.CFG_PATH.is_file():
-            CFG_FILE = read_config_file({{cookiecutter.repo_name}}.CFG_PATH)
+        PATH = {{cookiecutter.repo_name}}.CFG_PATH
+        if PATH.is_file():
+            CFG_FILE = {{cookiecutter.repo_name}}.read_yaml(PATH)
             self.__parse_config_file(CFG_FILE)
 
     def __parse_config_file(self, CFG_FILE: DotMap) -> None:
@@ -38,6 +38,17 @@ class Cfg:
         # Create the config.
         if CFG_FILE["variable"] not in (None, DotMap()):
             self.variable = Path(CFG_FILE["variable"])
+
+    def to_dict(self, DEFAULT_ARE_NONE: bool = False) -> Dict[str, Optional[Any]]:
+        """Convert config to hashmap."""
+        if DEFAULT_ARE_NONE:
+            return dict(
+                variable=None,
+            )
+        else:
+            return dict(
+                variable=str(self.variable),
+            )
 
     @property
     def variable(self) -> Path:
@@ -48,12 +59,6 @@ class Cfg:
     def variable(self, PATH: Path) -> None:
         """Set variable."""
         self.__variable = PATH
-
-
-def read_config_file(PATH: Path) -> DotMap:
-    """Load the config file."""
-    CFGF_DICT, IND, BSI = ruamel.yaml.util.load_yaml_guess_indent(PATH.open())
-    return DotMap(CFGF_DICT)
 
 
 def generate_config() -> None:

@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2021-10-13
+
+### Changed
+
++ linters and fixers config in pyproject.toml
++ moved config loader functions
+
 ## [0.2.0] - 2021-09-21
 
 ### Added

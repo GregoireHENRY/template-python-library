@@ -8,7 +8,6 @@ their respective rules.
 import re
 import sys
 from pathlib import Path
-from typing import Optional  # noqa: F401
 
 from pudb import set_trace as bp  # noqa: F401
 
