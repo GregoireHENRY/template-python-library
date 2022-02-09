@@ -33,13 +33,10 @@ def main() -> None:
 
     sh.git.init(".")
     sh.git.add(".")
+    sh.git.branch("-M", "main")
 
     run("poetry run pre-commit install")
-    # run("poetry run pre-commit")
     run("poetry run git commit -m \"feat: initial commit\"")
-
-    # sh.git.commit("-m", "feat: initial commit", "--no-verify")
-    sh.git.branch("-M", "main")
 
 
 if __name__ == "__main__":
