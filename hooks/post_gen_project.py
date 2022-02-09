@@ -12,7 +12,7 @@ import sh
 from pudb import set_trace as bp  # noqa:F401
 
 
-def run(COMMAND: str, OUTPUT: bool=False) -> Optional[str]:
+def run(COMMAND: str, OUTPUT: bool = False) -> Optional[str]:
     if OUTPUT:
         return subprocess.check_output(COMMAND, shell=True).decode("utf-8").split("\n")[0]
     else:
@@ -35,9 +35,10 @@ def main() -> None:
     sh.git.add(".")
 
     run("poetry run pre-commit install")
-    run("poetry run pre-commit")
+    # run("poetry run pre-commit")
+    run("poetry run git commit -m \"feat: initial commit\"")
 
-    sh.git.commit("-m", "feat: initial commit", "--no-verify")
+    # sh.git.commit("-m", "feat: initial commit", "--no-verify")
     sh.git.branch("-M", "main")
 
 
