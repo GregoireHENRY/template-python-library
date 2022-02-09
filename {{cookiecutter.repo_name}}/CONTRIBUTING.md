@@ -4,11 +4,11 @@
 
 Some useful links:
 
-+ [How to Contribute to an Open Source Project on GitHub][https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github]
-+ [How to Write a Git Commit Message][https://chris.beams.io/posts/git-commit]
-+ [Conventional commits][https://www.conventionalcommits.org/en/v1.0.0/]
-+ [How to Be a Good Open Source Project Owner – The Ultimate Guide][https://www.freecodecamp.org/news/ultimate-owners-guide-to-open-source/#how-to-automate-your-process]
-+ [Forking Projects Guide][https://guides.github.com/activities/forking]
++ [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github)
++ [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit)
++ [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
++ [How to Be a Good Open Source Project Owner – The Ultimate Guide](https://www.freecodecamp.org/news/ultimate-owners-guide-to-open-source/#how-to-automate-your-process)
++ [Forking Projects Guide](https://guides.github.com/activities/forking)
 
 ## Environment
 
