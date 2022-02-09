@@ -3,12 +3,10 @@ __pycache__/
 target/
 .mypy_cache/
 .pytest_cache/
+.ropeproject/
 .coverage
 dist/
+doc/build/
 
 # Project
 personal/
-assets/images/*
-!assets/images/logo.png
-{{cookiecutter.project_name}}.log
-# {{cookiecutter.project_name}}.yaml

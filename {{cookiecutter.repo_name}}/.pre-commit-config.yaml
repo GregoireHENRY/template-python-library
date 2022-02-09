@@ -1,75 +1,69 @@
 ---
 fail_fast: true
 repos:
-    - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.0.1
-      hooks:
-          - id: check-added-large-files
-            args: [--maxkb=500]
-          - id: check-executables-have-shebangs
-          - id: check-merge-conflict
-          - id: check-toml
-          - id: check-yaml
-          - id: end-of-file-fixer
-          - id: trailing-whitespace
-    - repo: https://github.com/jumanjihouse/pre-commit-hooks
-      rev: 2.1.5
-      hooks:
-          - id: forbid-binary
-            exclude: |
-                (?x)^(
-                    rsc/.*\.(png|jpg|gif)
-                )$
-          - id: markdownlint
-            exclude: |
-                (?x)^(
-                    docs/commands-and-functions.md
-                )$
-    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: 0.1.0
-      hooks:
-          - id: yamlfmt
-    - repo: local
-      hooks:
-          - id: single-sources-of-truth
-            name: Update single sources of truth
-            stages: [commit]
-            language: system
-            entry: poetry run python ssot.py
-            pass_filenames: false
-          - id: flake8
-            name: flake8
-            stages: [commit]
-            language: system
-            entry: flake8
-            types: [python]
-            pass_filenames: false
-          - id: mypy
-            name: mypy
-            stages: [commit]
-            language: system
-            entry: mypy .
-            types: [python]
-            pass_filenames: false
-          - id: isort
-            name: isort
-            stages: [commit]
-            language: system
-            entry: isort .
-            types: [python]
-            pass_filenames: false
-          - id: back
-            name: black
-            stages: [commit]
-            language: system
-            entry: black .
-            types: [python]
-            pass_filenames: false
-          - id: pytest-cov
-            name: Launch tests with Pytest
-            stages: [commit]
-            language: system
-            entry: poetry run pytest --cov --cov-fail-under=0 --cov-report term-missing
-            types: [python]
-            pass_filenames: false
-# exclude: ^...
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+  - id: check-added-large-files
+    args: [--maxkb=500]
+  - id: check-executables-have-shebangs
+  - id: check-merge-conflict
+  - id: check-toml
+  - id: check-yaml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  rev: 2.1.5
+  hooks:
+  - id: forbid-binary
+  - id: markdownlint
+    args: [-s, .mdl.rb]
+- repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+  rev: 0.1.0
+  hooks:
+  - id: yamlfmt
+    args: [--mapping, '2', --sequence, '2', --offset, '0']
+- repo: local
+  hooks:
+  - id: isort
+    name: isort
+    stages: [commit]
+    language: system
+    entry: poetry run isort .
+    types: [python]
+    pass_filenames: false
+  - id: black
+    name: black
+    stages: [commit]
+    language: system
+    entry: poetry run black .
+    types: [python]
+    pass_filenames: false
+  - id: flake8
+    name: flake8
+    stages: [commit]
+    language: system
+    entry: poetry run flake8
+    types: [python]
+    pass_filenames: false
+  - id: mypy
+    name: mypy
+    stages: [commit]
+    language: system
+    entry: poetry run mypy .
+    types: [python]
+    pass_filenames: false
+  - id: pytest
+    name: pytest
+    stages: [commit]
+    language: system
+    entry: poetry run pytest --cov --cov-fail-under=0 --cov-report term-missing
+    types: [python]
+    pass_filenames: false
+  - id: documentation
+    name: documentation
+    stages: [commit]
+    language: system
+    entry: poetry run sphinx-build doc/source doc/build
+    types_or: [python, rst]
+    pass_filenames: false

@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2022-02-09
+
+### Changed
+
++ removed dotfiles that could be described elsewhere
++ simplified python file
++ post_gen hook now in python
++ version from pyproject.toml
++ updated packages and python version to 3.10
++ added Sphinx
+
 ## [0.2.1] - 2021-10-13
 
 ### Changed
